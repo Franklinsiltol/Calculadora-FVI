@@ -6,112 +6,85 @@
     <title>Calculadora de Taxas</title>
     <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9cXFzY2NjMzMzc3Nzi4uK1tbWhoaHf399sbGyXl5fFxcXPz8/8/Pz39/eOjo68vLxERESFhYU7OzsUFBRRUVEiIiIpKSmdnZ0vLy8aGhpGRka/v79XV1eSkpLt7e2rq6t2dnY3NzdkZGRvb2+vr6/cdIYxAAAEWElEQVR4nO2d2XIiMQxFbdYOSwghQMgK2f7/E4ckRRigF9lWta9d97zyolNt3F4ktTGEEEIIIYQQQgghhBBCCCGEEEIIIYSQaKw7i2I+mfYHV93pZLhZrJaxI9JktOte2wtm06ITOzIN7jZXl3JHpjfr2BEGsRxv6/R+6S9ih+nNqtes98vwPXasPoxqR+fFaF3FjteVl4GL34/jXeyYXVhPXf2+GcYOW87Yx2/P9VvsyGXcOw/QI73YwUt48/f7foz4i4B5kOCeTWyDBgJG6AHokfowCxe0dhBbo5o7Db8949giVdwqCdppbJMK1ARRX/0PaoIWdB2uMsn8APpKVHhNYAsGv+jRBcOWagkI3ucuaJy28ykK3uQu+Ji7oJnkLrjKXdB0cxfs5C6o9AiBBZ9yFzTPuQua7AU1ljPQghorUmzBde6CCoMUXNB43aKlJBg8k8ILvuQu6H0VmoygESdbpCpoBNkyaQsGTTRJCIbcxSQhaD5zFzSvuQuaIndBM8xd0PegNB1Bzxd+QoJ+hikJehkmJehjmJagx0liYoLmS0dwXexeWo5ciusbv1zw5+Jj13LoQhZqgtbetBy7jA89QWshB6rTaWmDoLWQhVCagrbfcvAi5KlezYKYaaXiXC+JIGROonQylQnaq5bDFyDMKRUKWgtYxSZKKhUL2uuWwxcg+SPKBa0tWo6/GcFpm4ugtS3HL0BZEPAhNh3VOAoCPsSGpamzoH1tWaCZ2tnUXdBuW41ewkZXEHGPoSxo5y3H30zlUYafIOBcs1QWtB8tCzRT/hC9BRHrunQF7bbV4EWUXCMGCFoL2AvkImEhSBBxD3WeJxwmiPhHNDtNQcSt/umRVKgg4j745DgjWBD05HSkKAh6Q1XoCSJOpt88qwnCtsYYDYv70h+c64ZAr9oqcS+MwttA1eJR+TWJHbMTPqVt0P1bzvGq3UvJ0K84MSFDz+rL59hxi/EtL0XcXJTiXT+Ld7Rfjn+BMGbmyQUBFdCj2LGLCCnxTqJHZFANe+zgJQQJbmNHLyCsC0ECy9LANguImUOnhPaRwLtfOyO4UUZsgSaCBVF7Ch4Ib3UCvqJR6OUCeDHzHwqCkGmmf2h044EepCrthmJL1KEiiHySqNMw6ja2RjU6gt3YGtUotfzCXbEpCeI+QiVB+xRbpAotQdidoZYg5vW2URREXc6oCUJmmRhFQVt+gxwdPUHQT7DoCYIuSPUEQT9qoSc4i61SjtYXOyzsLKPXTB91zxTcUxBd0L/H0BnAt2lB/doOzB5ia9Sh0Aga9DXxxy5UED+zZNQsUQdoKukJy4CROoD+Cx5xbHFyBP8q9MDSq235FHQdU86T81AdYKar1/Di5DhIIynojCdxC74e7rlvE6+Cdi7bzWPsMIN4H/drR2cBvAaV81H6KXXb//pEPQ/1Yd1ZFPNed7Cn35vvbj4SebcTQgghhBBCCCGEEEIIIYQQQgghhBCSJ/8AkxU1byHsk00AAAAASUVORK5CYII=">
     <meta name="theme-color" content="#FFFFFF">
-    <link rel="manifest" href="#manifest">
-    <script>
-        // Manifest JSON
-        const manifest = {
-            "name": "Calculadora de Taxas",
-            "short_name": "CalcTaxas",
-            "start_url": ".",
-            "display": "standalone",
-            "background_color": "#FFFFFF",
-            "theme_color": "#FFFFFF",
-            "icons": [
-                {
-                    "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9cXFzY2NjMzMzc3Nzi4uK1tbWhoaHf399sbGyXl5fFxcXPz8/8/Pz39/eOjo68vLxERESFhYU7OzsUFBRRUVEiIiIpKSmdnZ0vLy8aGhpGRka/v79XV1eSkpLt7e2rq6t2dnY3NzdkZGRvb2+vr6/cdIYxAAAEWElEQVR4nO2d2XIiMQxFbdYOSwghQMgK2f7/E4ckRRigF9lWta9d97zyolNt3F4ktTGEEEIIIYQQQgghhBBCCCGEEEIIIYSQaKw7i2I+mfYHV93pZLhZrJaxI9JktOte2wtm06ITOzIN7jZXl3JHpjfr2BEGsRxv6/R+6S9ih+nNqtes98vwPXasPoxqR+fFaF3FjteVl4GL34/jXeyYXVhPXf2+GcYOW87Yx2/P9VvsyGXcOw/QI73YwUt48/f7foz4i4B5kOCeTWyDBgJG6AHokfowCxe0dhBbo5o7Db8949giVdwqCdppbJMK1ARRX/0PaoIWdB2uMsn8APpKVHhNYAsGv+jRBcOWagkI3ucuaJy28ykK3uQu+Ji7oJnkLrjKXdB0cxfs5C6o9AiBBZ9yFzTPuQua7AU1ljPQghorUmzBde6CCoMUXNB43aKlJBg8k8ILvuQu6H0VmoygESdbpCpoBNkyaQsGTTRJCIbcxSQhaD5zFzSvuQuaIndBM8xd0PegNB1Bzxd+QoJ+hikJehkmJehjmJagx0liYoLmS0dwXexeWo5ciusbv1zw5+Jj13LoQhZqgtbetBy7jA89QWshB6rTaWmDoLWQhVCagrbfcvAi5KlezYKYaaXiXC+JIGROonQylQnaq5bDFyDMKRUKWgtYxSZKKhUL2uuWwxcg+SPKBa0tWo6/GcFpm4ugtS3HL0BZEPAhNh3VOAoCPsSGpamzoH1tWaCZ2tnUXdBuW41ewkZXEHGPoSxo5y3H30zlUYafIOBcs1QWtB8tCzRT/hC9BRHrunQF7bbV4EWUXCMGCFoL2AvkImEhSBBxD3WeJxwmiPhHNDtNQcSt/umRVKgg4j745DgjWBD05HSkKAh6Q1XoCSJOpt88qwnCtsYYDYv70h+c64ZAr9oqcS+MwttA1eJR+TWJHbMTPqVt0P1bzvGq3UvJ0K84MSFDz+rL59hxi/EtL0XcXJTiXT+Ld7Rfjn+BMGbmyQUBFdCj2LGLCCnxTqJHZFANe+zgJQQJbmNHLyCsC0ECy9LANguImUOnhPaRwLtfOyO4UUZsgSaCBVF7Ch4Ib3UCvqJR6OUCeDHzHwqCkGmmf2h044EepCrthmJL1KEiiHySqNMw6ja2RjU6gt3YGtUotfzCXbEpCeI+QiVB+xRbpAotQdidoZYg5vW2URREXc6oCUJmmRhFQVt+gxwdPUHQT7DoCYIuSPUEQT9qoSc4i61SjtYXOyzsLKPXTB91zxTcUxBd0L/H0BnAt2lB/doOzB5ia9Sh0Aga9DXxxy5UED+zZNQsUQdoKukJy4CROoD+Cx5xbHFyBP8q9MDSq235FHQdU86T81AdYKar1/Di5DhIIynojCdxC74e7rlvE6+Cdi7bzWPsMIN4H/drR2cBvAaV81H6KXXb//pEPQ/1Yd1ZFPNed7Cn35vvbj4SebcTQgghhBBCCCGEEEIIIYQQQgghhBCSJ/8AkxU1byHsk00AAAAASUVORK5CYII=",
-                    "sizes": "192x192",
-                    "type": "image/png"
-                },
-                {
-                    "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEUAAAD///9cXFzY2NjMzMzc3Nzi4uK1tbWhoaHf399sbGyXl5fFxcXPz8/8/Pz39/eOjo68vLxERESFhYU7OzsUFBRRUVEiIiIpKSmdnZ0vLy8aGhpGRka/v79XV1eSkpLt7e2rq6t2dnY3NzdkZGRvb2+vr6/cdIYxAAAEWElEQVR4nO2d2XIiMQxFbdYOSwghQMgK2f7/E4ckRRigF9lWta9d97zyolNt3F4ktTGEEEIIIYQQQgghhBBCCCGEEEIIIYSQaKw7i2I+mfYHV93pZLhZrJaxI9JktOte2wtm06ITOzIN7jZXl3JHpjfr2BEGsRxv6/R+6S9ih+nNqtes98vwPXasPoxqR+fFaF3FjteVl4GL34/jXeyYXVhPXf2+GcYOW87Yx2/P9VvsyGXcOw/QI73YwUt48/f7foz4i4B5kOCeTWyDBgJG6AHokfowCxe0dhBbo5o7Db8949giVdwqCdppbJMK1ARRX/0PaoIWdB2uMsn8APpKVHhNYAsGv+jRBcOWagkI3ucuaJy28ykK3uQu+Ji7oJnkLrjKXdB0cxfs5C6o9AiBBZ9yFzTPuQua7AU1ljPQghorUmzBde6CCoMUXNB43aKlJBg8k8ILvuQu6H0VmoygESdbpCpoBNkyaQsGTTRJCIbcxSQhaD5zFzSvuQuaIndBM8xd0PegNB1Bzxd+QoJ+hikJehkmJehjmJagx0liYoLmS0dwXexeWo5ciusbv1zw5+Jj13LoQhZqgtbetBy7jA89QWshB6rTaWmDoLWQhVCagrbfcvAi5KlezYKYaaXiXC+JIGROonQylQnaq5bDFyDMKRUKWgtYxSZKKhUL2uuWwxcg+SPKBa0tWo6/GcFpm4ugtS3HL0BZEPAhNh3VOAoCPsSGpamzoH1tWaCZ2tnUXdBuW41ewkZXEHGPoSxo5y3H30zlUYafIOBcs1QWtB8tCzRT/hC9BRHrunQF7bbV4EWUXCMGCFoL2AvkImEhSBBxD3WeJxwmiPhHNDtNQcSt/umRVKgg4j745DgjWBD05HSkKAh6Q1XoCSJOpt88qwnCtsYYDYv70h+c64ZAr9oqcS+MwttA1eJR+TWJHbMTPqVt0P1bzvGq3UvJ0K84MSFDz+rL59hxi/EtL0XcXJTiXT+Ld7Rfjn+BMGbmyQUBFdCj2LGLCCnxTqJHZFANe+zgJQQJbmNHLyCsC0ECy9LANguImUOnhPaRwLtfOyO4UUZsgSaCBVF7Ch4Ib3UCvqJR6OUCeDHzHwqCkGmmf2h044EepCrthmJL1KEiiHySqNMw6ja2RjU6gt3YGtUotfzCXbEpCeI+QiVB+xRbpAotQdidoZYg5vW2URREXc6oCUJmmRhFQVt+gxwdPUHQT7DoCYIuSPUEQT9qoSc4i61SjtYXOyzsLKPXTB91zxTcUxBd0L/H0BnAt2lB/doOzB5ia9Sh0Aga9DXxxy5UED+zZNQsUQdoKukJy4CROoD+Cx5xbHFyBP8q9MDSq235FHQdU86T81AdYKar1/Di5DhIIynojCdxC74e7rlvE6+Cdi7bzWPsMIN4H/drR2cBvAaV81H6KXXb//pEPQ/1Yd1ZFPNed7Cn35vvbj4SebcTQgghhBBCCCGEEEIIIYQQQgghhBCSJ/8AkxU1byHsk00AAAAASUVORK5CYII=",
-                    "sizes": "512x512",
-                    "type": "image/png"
-                }
-            ]
-        };
-
-        // Write manifest.json to the document
-        const manifestBlob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
-        const manifestUrl = URL.createObjectURL(manifestBlob);
-        document.querySelector('link[rel="manifest"]').setAttribute('href', manifestUrl);
-
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
-    </script>
+        img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 300px;
+        }
+    </style>
 </head>
 <body>
-    <header style="text-align: center; padding: 10px;">
-        <img src="https://logodownload.org/wp-content/uploads/2019/08/sumup-logo-0.png" alt="SumUp Logo" style="max-width: 150px; max-height: 50px; margin-bottom: 20px;">
-        <h1>Calculadora de Taxas</h1>
-    </header>
-    <main style="max-width: 600px; margin: auto; padding: 20px;">
-        <label for="taxaSumUp">Taxa SumUp (%):</label>
-        <input type="number" id="taxaSumUp" step="0.01" placeholder="0.00">
-
-        <label for="taxaConcorrente">Taxa Concorrente (%):</label>
-        <input type="number" id="taxaConcorrente" step="0.01" placeholder="0.00">
-
-        <label for="valor">Valor da Venda (R$):</label>
-        <input type="number" id="valor" step="0.01" placeholder="0.00">
-
-        <button onclick="calcular()">Calcular</button>
-
-        <h2>Resultados:</h2>
-        <p id="resultadoSumUp">SumUp: R$ 0.00</p>
-        <p id="resultadoConcorrente">Concorrente: R$ 0.00</p>
-    </main>
-
+    <img src="https://logodownload.org/wp-content/uploads/2019/08/sumup-logo-0.png" alt="SumUp Logo">
+    <h1>Calculadora de Taxas</h1>
+    <input type="number" id="taxa1" placeholder="Taxa SumUp (%)" step="0.01"><br>
+    <input type="number" id="taxa2" placeholder="Taxa Concorrente (%)" step="0.01"><br>
+    <input type="number" id="valor" placeholder="Valor da Transação (R$)" step="0.01"><br>
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
     <script>
         function calcular() {
-            const taxaSumUp = parseFloat(document.getElementById('taxaSumUp').value) || 0;
-            const taxaConcorrente = parseFloat(document.getElementById('taxaConcorrente').value) || 0;
-            const valor = parseFloat(document.getElementById('valor').value) || 0;
+            var taxa1 = parseFloat(document.getElementById('taxa1').value);
+            var taxa2 = parseFloat(document.getElementById('taxa2').value);
+            var valor = parseFloat(document.getElementById('valor').value);
 
-            const resultadoSumUp = (valor * (taxaSumUp / 100)).toFixed(2);
-            const resultadoConcorrente = (valor * (taxaConcorrente / 100)).toFixed(2);
+            if (!isNaN(taxa1) && !isNaN(taxa2) && !isNaN(valor)) {
+                var resultado1 = valor - (valor * (taxa1 / 100));
+                var resultado2 = valor - (valor * (taxa2 / 100));
+                var diferenca = resultado1 - resultado2;
 
-            document.getElementById('resultadoSumUp').textContent = `SumUp: R$ ${resultadoSumUp}`;
-            document.getElementById('resultadoConcorrente').textContent = `Concorrente: R$ ${resultadoConcorrente}`;
+                document.getElementById('resultado').innerHTML = 
+                    "Valor a receber com SumUp: R$ " + resultado1.toFixed(2) + "<br>" +
+                    "Valor a receber com Concorrente: R$ " + resultado2.toFixed(2) + "<br>" +
+                    "Diferença: R$ " + diferenca.toFixed(2);
+            } else {
+                document.getElementById('resultado').innerHTML = "Por favor, preencha todos os campos corretamente.";
+            }
         }
-    </script>
 
-    <script>
-        // Service Worker code inlined for demonstration purposes
-        const swScript = `
-        self.addEventListener('install', event => {
-            event.waitUntil(
-                caches.open('static-v1').then(cache => {
-                    return cache.addAll([
-                        '/',
-                        '/index.html',
-                        '/favicon.ico'
-                    ]);
-                })
-            );
-        });
+        // PWA Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                console.log('Service Worker registrado com sucesso:', registration);
+            }).catch(function(error) {
+                console.log('Falha ao registrar o Service Worker:', error);
+            });
+        }
 
-        self.addEventListener('fetch', event => {
-            event.respondWith(
-                caches.match(event.request).then(response => {
-                    return response || fetch(event.request);
-                })
-            );
-        });
-        `;
-        const swBlob = new Blob([swScript], { type: 'application/javascript' });
-        const swUrl = URL.createObjectURL(swBlob);
-        navigator.serviceWorker.register(swUrl).then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
-            console.log('ServiceWorker registration failed: ', err);
+        // Pop-up de instalação do PWA
+        let deferredPrompt;
+        const addBtn = document.createElement('button');
+        addBtn.textContent = 'Instalar App';
+        addBtn.style.display = 'none';
+        document.body.appendChild(addBtn);
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            addBtn.style.display = 'block';
+
+            addBtn.addEventListener('click', () => {
+                addBtn.style.display = 'none';
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Usuário aceitou a instalação do App.');
+                    } else {
+                        console.log('Usuário recusou a instalação do App.');
+                    }
+                    deferredPrompt = null;
+                });
+            });
         });
     </script>
 </body>
