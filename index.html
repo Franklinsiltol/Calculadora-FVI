@@ -52,6 +52,10 @@
             margin-bottom: 20px;
             height: auto;
         }
+        .resultado {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -66,13 +70,16 @@
         <input type="number" id="taxaConcorrente" placeholder="Digite a taxa do concorrente"><br>
         <button onclick="compararTaxas()">Comparar Taxas</button>
         <h3>Resultado</h3>
-        <p>Recebimento na SumUp: R$<span id="recebimentoSumUp">0.00</span></p>
-        <p>Recebimento no Concorrente: R$<span id="recebimentoConcorrente">0.00</span></p>
+        <div class="resultado">
+            <p>Recebimento na SumUp: R$<span id="recebimentoSumUp">0.00</span></p>
+            <p>Recebimento no Concorrente: R$<span id="recebimentoConcorrente">0.00</span></p>
+            <p>Diferença por Transação: R$<span id="diferencaTransacao">0.00</span></p>
+        </div>
         <h3>Diferença de Custo</h3>
-        <p>Em um dia: R$<span id="dia">0.00</span></p>
-        <p>Em uma semana: R$<span id="semana">0.00</span></p>
-        <p>Em um mês: R$<span id="mes">0.00</span></p>
-        <p>Em um ano: R$<span id="ano">0.00</span></p>
+        <div class="resultado">
+            <p>Em um mês: R$<span id="mes">0.00</span></p>
+            <p>Em um ano: R$<span id="ano">0.00</span></p>
+        </div>
     </div>
 
     <script>
@@ -84,12 +91,11 @@
             if (!isNaN(valor) && !isNaN(taxaSumUp) && !isNaN(taxaConcorrente)) {
                 const recebimentoSumUp = valor * (1 - taxaSumUp);
                 const recebimentoConcorrente = valor * (1 - taxaConcorrente);
-                const diferencaPorTransacao = valor * (taxaConcorrente - taxaSumUp);
+                const diferencaPorTransacao = recebimentoSumUp - recebimentoConcorrente;
 
                 document.getElementById('recebimentoSumUp').innerText = recebimentoSumUp.toFixed(2);
                 document.getElementById('recebimentoConcorrente').innerText = recebimentoConcorrente.toFixed(2);
-                document.getElementById('dia').innerText = diferencaPorTransacao.toFixed(2);
-                document.getElementById('semana').innerText = (diferencaPorTransacao * 7).toFixed(2);
+                document.getElementById('diferencaTransacao').innerText = diferencaPorTransacao.toFixed(2);
                 document.getElementById('mes').innerText = (diferencaPorTransacao * 30).toFixed(2);
                 document.getElementById('ano').innerText = (diferencaPorTransacao * 365).toFixed(2);
             } else {
